@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+</head>
+<body>
+  <main>
+    
+      <h1>Welcome to GitHub Profiles!</h1>
+      {% if user.is_authenticated %}
+      	<ul>
+  <a href="{% url 'explore' %}">Explore</a>
+  <a href={% url 'may' user.pk %}>My Profile</a>
+  <a href="{% url 'logout' %}">Log Out</a>
+  
+  </ul>
+      	
+      {% else %}
+      	<ul>
+  <a href="{% url 'signup' %}">Explore</a>
+  
+  <a href="{% url 'login' %}">Log Out</a>
+  
+  </ul>
+    
+      {% endif %}
+      <footer>
+  <p>Built by 200050026 200050037</p>
+  
+</footer>
+      {% block content %}
+      {% endblock %}
+      
+  </main>
+</body>
+</html>

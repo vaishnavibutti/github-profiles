@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+ {{p.user}}
+<p>{{p.followers}} followers</p>
+profile last updated at  {{p.time}}
+{% if p.user.id == user.id %}
+     <a class ="button" href={% url 'may' user.pk %}>Update</a>
+     {% endif %}
+{% for u in p.repository_set.all %}
+ 	<li>{{u.repo }} - {{u.star}}</li>
+{% endfor %}
+  
+
+  
+  
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for user in users %}
+	<p><a href={% url 'may' user.pk %}>{{user}}</a></p>
+	
+{% endfor %}
+	
+  
+
+{% endblock %}
